@@ -26,3 +26,25 @@ footer{text-align:center;color:#78917e;font:10px 'DM Mono',monospace;letter-spac
 .tile.grass:before{content:none}
 .asset-credit{display:block;margin-top:8px;letter-spacing:.3px;font:10px Nunito,sans-serif;color:#8ea995}
 .asset-credit a{color:#b6e98b}
+
+/* First-area route and trainer introduction */
+.overworld{height:520px}
+.connections path{stroke-dasharray:none;stroke-width:6;opacity:.9}
+.node{width:94px;height:62px}
+.node small{font-size:10px;white-space:normal;text-align:center;line-height:1.1;padding:0 3px}
+.node.start{width:82px}
+.node.boss{width:86px;height:66px}
+.node:disabled{opacity:.28!important;filter:grayscale(.8)!important}
+.node.completed{border-color:#b8ef83;box-shadow:0 0 0 3px #a5e66d55,0 5px 0 #14251a}
+.trainer-intro{position:absolute;inset:0;z-index:10;background:#08130edc;display:grid;place-items:center;padding:20px}
+.trainer-card{width:min(680px,96%);min-height:280px;background:#d9e8d2;border:5px solid #42684b;border-radius:15px;display:grid;grid-template-columns:230px 1fr;overflow:hidden;color:#203526;box-shadow:0 18px 55px #0009}
+.trainer-portrait-wrap{background:linear-gradient(#a9d5b4,#6d9f79);display:flex;align-items:end;justify-content:center;min-height:280px;padding:8px}
+.trainer-portrait{max-width:100%;width:210px;height:260px;object-fit:contain;image-rendering:pixelated}
+.trainer-dialogue{padding:25px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.trainer-dialogue .eyebrow{color:#56765b}
+.trainer-dialogue h3{font-size:25px;margin:4px 0 12px}
+.trainer-dialogue p:not(.eyebrow){font-size:17px;line-height:1.5;min-height:52px}
+.primary{background:#79bd55;color:#17321b;border:2px solid #426d3c;border-radius:9px;padding:10px 17px;font:800 13px Nunito;cursor:pointer;margin-top:12px}
+.location-info{position:absolute;z-index:8;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,90%);background:#e0edda;color:#203526;border:4px solid #557b56;border-radius:14px;padding:22px;box-shadow:0 16px 45px #0009}
+.location-info h3{margin:0 0 8px}.location-info p{line-height:1.5}
+@media(max-width:650px){.overworld{height:440px}.node{width:76px;height:58px}.node small{font-size:8px}.trainer-card{grid-template-columns:120px 1fr;min-height:220px}.trainer-portrait-wrap{min-height:220px}.trainer-portrait{height:200px}.trainer-dialogue{padding:14px}.trainer-dialogue h3{font-size:19px}.trainer-dialogue p:not(.eyebrow){font-size:14px}}
