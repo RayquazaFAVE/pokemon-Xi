@@ -18,27 +18,30 @@
         <div class="legend"><span><i class="key battle"></i> Battle</span><span><i class="key wild"></i> Wild area</span><span><i class="key special"></i> Special</span><span><i class="key boss"></i> Boss</span></div>
       </div>
       <div id="overworld" class="overworld" aria-label="Branching route map">
-        <svg class="connections" viewBox="0 0 900 470" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M450 420 L270 330 L130 240 L270 150 L450 65"/>
-          <path d="M450 420 L450 330 L270 240 L270 150 L450 65"/>
-          <path d="M450 420 L630 330 L770 240 L630 150 L450 65"/>
-          <path d="M450 330 L630 240 L630 150"/>
-          <path d="M270 240 L450 150 L450 65"/>
+        <svg class="connections" viewBox="0 0 900 500" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M450 450 L250 350 L250 245 L450 145 L450 55"/>
+          <path d="M450 450 L650 350 L650 245 L450 145"/>
+          <path d="M250 245 L450 245 L450 145"/>
+          <path d="M650 245 L650 145 L450 145"/>
         </svg>
-        <button class="node start" style="left:50%;top:89%" data-node="start"><b>START</b><small>Your journey</small></button>
-        <button class="node battle" style="left:30%;top:70%" data-node="b1"><b>⚔</b><small>Trainer</small></button>
-        <button class="node wild" style="left:50%;top:70%" data-node="w1"><b>♧</b><small>Forest</small></button>
-        <button class="node special" style="left:70%;top:70%" data-node="s1"><b>✦</b><small>Rest stop</small></button>
-        <button class="node wild" style="left:15%;top:51%" data-node="w2"><b>♧</b><small>Meadow</small></button>
-        <button class="node battle" style="left:30%;top:51%" data-node="b2"><b>⚔</b><small>Trainer</small></button>
-        <button class="node battle" style="left:50%;top:51%" data-node="b3"><b>⚔</b><small>Rival</small></button>
-        <button class="node wild" style="left:70%;top:51%" data-node="w3"><b>♧</b><small>Lake</small></button>
-        <button class="node special" style="left:85%;top:51%" data-node="s2"><b>✦</b><small>Cache</small></button>
-        <button class="node battle" style="left:30%;top:32%" data-node="b4"><b>⚔</b><small>Trainer</small></button>
-        <button class="node wild" style="left:50%;top:32%" data-node="w4"><b>♧</b><small>Cave</small></button>
-        <button class="node battle" style="left:70%;top:32%" data-node="b5"><b>⚔</b><small>Elite trainer</small></button>
-        <button class="node boss" style="left:50%;top:14%" data-node="boss"><b>★</b><small>Boss</small></button>
+        <button class="node start" style="left:50%;top:90%" data-node="start"><b>START</b><small>Your journey</small></button>
+        <button class="node battle" style="left:28%;top:70%" data-node="logan"><b>⚔</b><small>Youngster Logan</small></button>
+        <button class="node battle" style="left:72%;top:70%" data-node="emma"><b>⚔</b><small>Lass Emma</small></button>
+        <button class="node wild" style="left:17%;top:49%" data-node="loganWild"><b>♧</b><small>Wild Zone</small></button>
+        <button class="node special" style="left:39%;top:49%" data-node="center"><b>✚</b><small>Pokémon Center</small></button>
+        <button class="node special" style="left:50%;top:29%" data-node="mart"><b>▣</b><small>PokéMart</small></button>
+        <button class="node wild" style="left:61%;top:49%" data-node="emmaWild"><b>♧</b><small>Wild Zone</small></button>
+        <button class="node battle" style="left:83%;top:49%" data-node="tristan"><b>⚔</b><small>Youngster Tristan</small></button>
+        <button class="node wild" style="left:83%;top:29%" data-node="tristanWild"><b>♧</b><small>Wild Zone</small></button>
+        <button class="node boss" style="left:50%;top:11%" data-node="boss"><b>★</b><small>Boss</small></button>
       </div>
+      <section id="trainer-intro" class="trainer-intro hidden" role="dialog" aria-modal="true" aria-labelledby="trainer-name">
+        <div class="trainer-card">
+          <div class="trainer-portrait-wrap"><img id="trainer-portrait" alt="" class="trainer-portrait"></div>
+          <div class="trainer-dialogue"><p class="eyebrow">TRAINER CHALLENGE</p><h3 id="trainer-name"></h3><p id="trainer-line"></p><button id="trainer-continue" class="primary">Continue →</button></div>
+        </div>
+      </section>
+      <section id="location-info" class="location-info hidden" aria-live="polite"><h3 id="location-title"></h3><p id="location-description"></p><button id="location-continue" class="primary">Continue</button></section>
       <div id="exploration" class="exploration hidden">
         <div class="area-top"><div><h3 id="area-name">Forest Trail</h3><p>Explore the area and look for wild Pokémon.</p></div><button id="leave-area" class="secondary">← Back to map</button></div>
         <div class="explore-layout">
