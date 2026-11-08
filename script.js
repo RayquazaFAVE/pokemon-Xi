@@ -36,15 +36,15 @@ function makeArea(theme) {
   const map = Array.from({ length: height }, (_, y) =>
     Array.from({ length: width }, (_, x) => {
       if (x === 0 || y === 0 || x === width - 1 || y === height - 1) return "tree";
-      if (theme === "lake" && x > 7 && y > 2) return "water";
-      if (theme === "cave" && (x === 4 && y > 1 && y < 6)) return "rock";
-      if (theme === "meadow") return Math.random() < .22 ? "grass" : "path";
-      if (Math.random() < .13) return "tree";
-      if (Math.random() < .20) return "grass";
-      return "path";
+      if (theme === "lake" && x > 8 && y > 2) return "water";
+      if (theme === "cave") return Math.random() < .18 ? "rock" : (Math.random() < .12 ? "grass" : "ground");
+      if (theme === "meadow") return Math.random() < .13 ? "tree" : (Math.random() < .34 ? "grass" : "ground");
+      if (Math.random() < .14) return "tree";
+      if (Math.random() < .27) return "grass";
+      return "ground";
     })
   );
-  // Keep a walkable route through the middle of each area.
+  // A clear dirt trail connects the entrance to the rest of every area.
   for (let x = 1; x < width - 1; x++) map[4][x] = "path";
   for (let y = 1; y < height - 1; y++) map[y][1] = "path";
   map[1][1] = "path";
@@ -55,6 +55,7 @@ function renderGrid() {
   grid.forEach((row, y) => row.forEach((type, x) => {
     const tile = document.createElement("div");
     tile.className = "tile " + type + (player.x === x && player.y === y ? " player" : "");
+    tile.setAttribute("aria-label", type === "grass" ? "Tall grass" : type);
     tile.setAttribute("role", "gridcell");
     tileMap.appendChild(tile);
   }));
